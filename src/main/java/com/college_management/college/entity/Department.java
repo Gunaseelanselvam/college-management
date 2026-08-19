@@ -35,5 +35,10 @@ public class Department{
         return name;
     }
 
+    public Object thenReturn(Department savedDepartment) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'thenReturn'");
+    }
+
 
 }
