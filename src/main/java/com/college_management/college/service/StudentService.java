@@ -2,6 +2,7 @@ package com.college_management.college.service;
 import org.springframework.stereotype.Service;
 
 import com.college_management.college.dto.StudentRequest;
+import com.college_management.college.dto.StudentResponse;
 import com.college_management.college.entity.Department;
 import com.college_management.college.entity.Student;
 import com.college_management.college.repository.DepartmentRepository;
@@ -20,7 +21,7 @@ public class StudentService{
         this.departmentRepository = departmentRepository;
     }
 
-    public Student createStudent(StudentRequest request){
+    public StudentResponse createStudent(StudentRequest request){
 
 
         Department department = departmentRepository
@@ -32,6 +33,14 @@ public class StudentService{
         student.setEmail(request.getEmail());
         student.setDepartment(department);
 
-        return studentRepository.save(student);
+        Student studentResponse = studentRepository.save(student);
+
+        return new StudentResponse(
+            studentResponse.getId(),
+            studentResponse.getName(),
+            studentResponse.getEmail(),
+            studentResponse.getId(),
+            studentResponse.getName()
+        );
     }
 }

@@ -45,6 +45,10 @@ public class Student {
     this.email = email;
    }
 
+   public String getEmail(){
+      return email;
+   }
+
 
    public void setDepartment(Department department){
     this.department = department;

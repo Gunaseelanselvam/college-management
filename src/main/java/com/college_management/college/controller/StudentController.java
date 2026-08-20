@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.college_management.college.dto.StudentRequest;
+import com.college_management.college.dto.StudentResponse;
 import com.college_management.college.entity.Student;
 import com.college_management.college.service.StudentService;
 
@@ -25,9 +26,9 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<Student> createStudent(@RequestBody StudentRequest request){
+    public ResponseEntity<StudentResponse> createStudent(@RequestBody StudentRequest request){
 
-        Student savedStudent = studentService.createStudent(request);
+        StudentResponse savedStudent = studentService.createStudent(request);
         return ResponseEntity.ok(savedStudent);
 
     }
